@@ -1,0 +1,3 @@
+[build]
+  publish = "public/"
+  environment = { NODE_VERSION = "18." }

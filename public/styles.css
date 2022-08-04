@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+html {
+  font-size: 18px;
+}
+
+@media (max-width: 790px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1280px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: antiquewhite;
+  color: black;
+}
+
+
+a, a:visited, a:hover {
+  color:darkslategrey;
+}
+
+a:hover {
+  text-decoration: none; 
+}
+
+ul {
+  list-style-position: inside;
+}
+
+/* Index page */
+body#index {
+  display: flex;
+  padding: 1rem;
+}
+
+body#index main {
+  margin: auto;
+}
+
+body#index main h1 {
+  letter-spacing: -0.1rem;
+  text-align: center;
+  font-weight: normal;
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
+}
+
+body#index main h1 span {
+  font-size: 3rem;
+}
+
+body#index main p {
+  margin-bottom: 0.5rem;
+}
+
+body#index main > ul > li {
+  margin-bottom: 0.5rem;
+}
+
+
+/* Individual item */
+body#item {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.25fr 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+body#item header {
+  display: flex;
+  padding: 1rem;
+  border-bottom: 2px solid darkslategrey;
+}
+
+
+body#item header div {
+  margin: auto;
+}
+
+body#item header div p {
+  line-height: 1.35rem;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.35rem;
+}
+
+body#item header div p span {
+  display: inline-block;
+  background-color: navajowhite;
+  padding: 0.15rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  border-radius: 0.25rem;
+  line-height: 1rem;
+}
+
+body#item header div h1 {
+  font-weight: normal;
+  letter-spacing: -0.1rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 790px) {
+  body#item header div h1 {
+    font-size: 1.85rem;
+  }
+}
+
+body#item iframe {
+  display: block;
+  border: 0px;
+  width: 100%;
+  height: 100%;
+}
