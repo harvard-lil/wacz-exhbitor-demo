@@ -129,7 +129,7 @@ body#item header div h1 {
 body#item iframe {
   display: block;
   width: 100%;
-  height: 35rem;
+  height: 90vh;
   margin: auto;
   border: 2px solid darkslategrey;
   border-radius: 0.5rem;
