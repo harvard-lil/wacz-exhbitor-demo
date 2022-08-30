@@ -4,7 +4,7 @@
     <title>Test 2 | My WARC Museum 🏛️</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" value="noindex, nofollow"/>
+    <meta name="robots" content="noindex, nofollow"/>
 
     <link rel="stylesheet" href="styles.css">
   </head>
@@ -14,7 +14,7 @@
     <header>
       <div>
         <h1>🏛️ Test 2</h1>
-        <p>Embedding <span>iframe-escape-test.warc.gz</span> coming from <span>warcembed-demo.s3.amazonaws.com</span>, proxied via <span>warcembed.lil.tools</span>.</p>
+        <p>Embedding <span>iframe-escape-test.warc.gz</span> coming from <span>warcembed-demo.s3.amazonaws.com</span>, proxied via <span>warc-embed.lil.tools</span>.</p>
         <p>This is considered be safe and should work even if third-party cookies are blocked.</p>
         <p>Clicking on the <em>"Test"</em> button should <strong>not</strong> do anything.</p>
         <p><a href="/">👈  Back to the index</a></p>
@@ -22,7 +22,7 @@
     </header>
 
     <iframe 
-      src="https://warcembed.lil.tools/embed/?archive-url=https://warcembed-demo.s3.amazonaws.com/iframe-escape-test.warc.gz&original-url=https://unique-seahorse-c49326.netlify.app/" 
+      src="https://warc-embed.lil.tools/?archive-file=iframe-escape-test.warc.gz&archived-url=https://unique-seahorse-c49326.netlify.app/" 
       sandbox="allow-scripts allow-modals allow-forms allow-same-origin"
     ></iframe>
 

@@ -66,6 +66,13 @@ body#index main p {
   margin-bottom: 0.5rem;
 }
 
+body#index main .warning {
+  border-top: 1px solid darkslategrey;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
 body#index main > ul > li {
   margin-bottom: 0.5rem;
 }

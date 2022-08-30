@@ -4,7 +4,7 @@
     <title>Test 5 | My WARC Museum 🏛️</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" value="noindex, nofollow"/>
+    <meta name="robots" content="noindex, nofollow"/>
 
     <link rel="stylesheet" href="styles.css">
   </head>
@@ -14,15 +14,15 @@
     <header>
       <div>
         <h1>🏛️ Test 5</h1>
-        <p>Embedding <span>twitter.com-2020-09-03.wacz</span> coming from <span>warc-storage-temporary.netlify.app</span>, proxied via <span>warcembed.lil.tools</span>.</p>
-        <p>This should be safe and work even if third party cookies are blocked.</p>
-        <p><span>warc-storage-temporary.netlify.app</span> does not support range requests, which our proxy compensates for.</p>
+        <p>Embedding <span>lil-law-harvard-edu-fullsite.wacz</span> coming from <span>warcembed-demo.s3.amazonaws.com</span>, proxied via <span>warc-embed.lil.tools</span>.</p>
+        <p>This is a <strong>1.59gb whole-site archive, containing over 600 pages</strong>, which can be fully explored.</p>
+        <p>The playback system only loads the resources it needs from the archive using range requests.</p>
         <p><a href="/">👈  Back to the index</a></p>
       </div>
     </header>
 
     <iframe 
-      src="https://warcembed.lil.tools/embed/?archive-url=https://warc-storage-temporary.netlify.app/twitter.com-2020-09-03.wacz&original-url=https://twitter.com/dog_rates/status/1298052245209006086?s=20" 
+      src="https://warc-embed.lil.tools/?archive-file=lil-law-harvard-edu-fullsite.wacz&archived-url=https://lil.law.harvard.edu&show-location-bar=1" 
       sandbox="allow-scripts allow-modals allow-forms allow-same-origin"
     ></iframe>
   </body>
