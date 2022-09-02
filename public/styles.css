@@ -104,13 +104,6 @@ body#item header div p {
   margin-bottom: 0.45rem;
 }
 
-body#item header div p a {
-  padding: 0.25rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  border-radius: 0.25rem;
-}
-
 body#item header div p span {
   display: inline-block;
   background-color: navajowhite;
