@@ -66,7 +66,7 @@ body#index main p {
   margin-bottom: 0.5rem;
 }
 
-body#index main .warning {
+body#index main .notice {
   border-top: 1px solid darkslategrey;
   padding: 1rem;
   text-align: center;
@@ -92,7 +92,6 @@ body#item header {
   max-width: 90ch;
   margin: auto;
 }
-
 
 body#item header div {
   margin: auto;
@@ -133,11 +132,4 @@ body#item iframe {
   margin: auto;
   border: 2px solid darkslategrey;
   border-radius: 0.5rem;
-  /*
-  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px,
-   rgba(240, 46, 170, 0.3) 10px 10px, 
-   rgba(240, 46, 170, 0.2) 15px 15px, 
-   rgba(240, 46, 170, 0.1) 20px 20px, 
-   rgba(240, 46, 170, 0.05) 25px 25px;
-  */
 }
