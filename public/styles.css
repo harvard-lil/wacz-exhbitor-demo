@@ -97,6 +97,18 @@ body#item header div {
   margin: auto;
 }
 
+body#item header div h1 {
+  font-weight: normal;
+  letter-spacing: -0.1rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 790px) {
+  body#item header div h1 {
+    font-size: 1.85rem;
+  }
+}
+
 body#item header div p {
   line-height: 1.35rem;
   letter-spacing: -0.5px;
@@ -113,16 +125,30 @@ body#item header div p span {
   line-height: 1rem;
 }
 
-body#item header div h1 {
-  font-weight: normal;
-  letter-spacing: -0.1rem;
-  margin-bottom: 0.5rem;
+body#item header div fieldset {
+  border: 0px;
+  margin-bottom: 1rem;
 }
 
-@media (max-width: 790px) {
-  body#item header div h1 {
-    font-size: 1.85rem;
-  }
+body#item header div fieldset legend {
+  padding-bottom: 0.25rem;
+}
+
+body#item header div fieldset textarea {
+  width: 100%;
+  height: 8rem;
+  padding: 0.5rem;
+  font-size: 0.75rem;
+}
+
+body#item header div fieldset button {
+  border: 0px;
+  background-color: darkslategray;
+  color: white;
+  padding: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  cursor: pointer;
 }
 
 body#item iframe {
@@ -132,4 +158,5 @@ body#item iframe {
   margin: auto;
   border: 2px solid darkslategrey;
   border-radius: 0.5rem;
+  background-color: white;
 }

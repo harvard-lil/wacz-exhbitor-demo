@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Test 7 | My WARC Museum 🏛️</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow"/>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="module">
+    const log = document.querySelector("header textarea");
+    const playback = document.querySelector("iframe");
+    const playbackOrigin = new URL(playback.src).origin;
+
+    // Controls
+    document.querySelector("fieldset").addEventListener("click", (e) => {
+      e.preventDefault();
+
+      // Extract archive info
+      if (e.target.classList.contains("get-collinfo")) {
+        playback.contentWindow.postMessage({getCollInfo: true}, playbackOrigin);
+      }
+
+      // Navigation
+      if (e.target.classList.contains("archive-nav")) {
+        const url = e.target.dataset.url;
+        playback.contentWindow.postMessage({updateUrl: url}, playbackOrigin);
+      }
+    });
+
+    // Log messages coming from `<iframe>`
+    window.addEventListener("message", (e) => {
+      if (event?.data && event.source === playback.contentWindow) {
+        // In <textarea>
+        log.value += `Incoming message from playback iframe:\n`;
+        log.value += `--- ${new Date()}\n`;
+        log.value += `${JSON.stringify(event.data, null, 2)}\n`;   
+        
+        // In console
+        console.log({timestamp: new Date(), message: event});
+
+        // Auto scroll on next animation frame
+        requestAnimationFrame(() => {
+          log.scroll({top: log.scrollHeight - 10, behavior: 'smooth'});
+        });
+      }
+    });
+    </script>
+  </head>
+
+  <body id="item">
+    
+    <header>
+      <div>
+        <h1>🏛️ Test 7</h1>
+        <p>Embedding <span>lil-law-harvard-edu-fullsite.wacz</span> coming from <span>warcembed-demo.s3.amazonaws.com</span>, proxied via <span>warc-embed.lil.tools</span>.</p>
+        <p><span>warc-embed</span> uses <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage">post messages</a> to allow the embedding website to communicate with the embedded archive under the constraints of the <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy">same-origin policy</a>.</p>
+        
+        <fieldset>
+          <legend>Two-way communication playground:</legend>
+          <textarea disabled></textarea>
+          <button class="get-collinfo">Extract web archive information</button>
+          <button class="archive-nav" data-url="https://lil.law.harvard.edu/">Navigate to /</button>
+          <button class="archive-nav" data-url="https://lil.law.harvard.edu/projects">Navigate to /projects</button>
+          <button class="archive-nav" data-url="https://lil.law.harvard.edu/about">Navigate to /about</button>
+        </fieldset>
+
+        <p><a href="/">👈  Back to the index</a></p>
+      </div>
+    </header>
+
+    <iframe 
+      src="https://warc-embed.lil.tools/?source=lil-law-harvard-edu-fullsite.wacz&url=https://lil.law.harvard.edu" 
+      sandbox="allow-scripts allow-modals allow-forms allow-same-origin"
+    ></iframe>
+  </body>
+
+</html>
