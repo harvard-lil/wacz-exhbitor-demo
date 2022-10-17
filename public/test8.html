@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Test 8 | My WARC Museum 🏛️</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow"/>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/test8/WarcEmbedTimeline.css">
+
+    <script type="module" src="/test8/WarcEmbedTimeline.js"></script>
+    <script type="module">
+    // Switch displays mode on `<warc-embed-timeline>`.
+    document.querySelector("fieldset > select").addEventListener("change", (e) => {
+      const warcEmbedTimeline = document.querySelector("warc-embed-timeline");
+
+      switch (e.target.value) {
+        case "dropdown":
+          warcEmbedTimeline.setAttribute("show-select", "");
+          warcEmbedTimeline.removeAttribute("show-range-input");
+        break;
+
+        case "slider": 
+        default:
+          warcEmbedTimeline.setAttribute("show-range-input", "");
+          warcEmbedTimeline.removeAttribute("show-select");
+        break;
+      }
+    })
+    </script>
+  </head>
+
+  <body id="item">
+    
+    <header>
+      <div>
+        <h1>🏛️ Test 8</h1>
+        <p>Embedding <span>whitehouse.gov-timelapse-2022-10-11.wacz</span> coming from <span>warcembed-demo.s3.amazonaws.com</span>, proxied via <span>warc-embed.lil.tools</span>.</p>
+        <p>This web archive contains 9 different versions of the <span>whitehouse.gov</span> homepage, captured at different points in time.</p>
+        <p>This test uses the <a href="/test7.html">the two-way communication system shown in test 7</a> to build an interactive experience: it provides controls to explore the embedded archive as a timeline.</p>
+
+        <fieldset>
+          <legend>Controls to display:</legend>
+
+          <select name="controls">
+            <option value="slider">Slider</option>
+            <option value="dropdown">Dropdown</option>
+          </select>
+
+          <warc-embed-timeline iframe-id="whitehouse-timeline" show-range-input></warc-embed-timeline>
+        
+        </fieldset>
+        
+        <p><a href="/">👈  Back to the index</a></p>
+      </div>
+    </header>
+
+    <iframe 
+      id="whitehouse-timeline"
+      src="https://warc-embed.lil.tools/?source=whitehouse.gov-timelapse-2022-10-11.wacz&url=https://www.whitehouse.gov/&ts=1000" 
+      sandbox="allow-scripts allow-modals allow-forms allow-same-origin"
+    ></iframe>
+  </body>
+
+</html>

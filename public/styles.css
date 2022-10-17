@@ -141,6 +141,13 @@ body#item header div fieldset textarea {
   font-size: 0.75rem;
 }
 
+body#item header div fieldset select {
+  padding: 0.25rem;
+  font-size: 0.75rem;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
 body#item header div fieldset button {
   border: 0px;
   background-color: darkslategray;
@@ -154,7 +161,7 @@ body#item header div fieldset button {
 body#item iframe {
   display: block;
   width: 100%;
-  height: 90vh;
+  height: calc(100vh - 8rem);
   margin: auto;
   border: 2px solid darkslategrey;
   border-radius: 0.5rem;
