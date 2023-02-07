@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Sandbox 🏛️</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow"/>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="module">
+    const input = prompt("Collection ID:")
+    const collectionId = parseInt(input)
+
+    if (isNaN(collectionId)) {
+      alert('Not a valid collection ID.')
+    }
+    else {
+      const body = document.querySelector('body')
+      const iframe = document.createElement('iframe')
+      iframe.setAttribute('src', `https://warc-embed.lil.tools/?source=${collectionId}.wacz`)
+      iframe.setAttribute('sandbox', 'allow-scripts allow-modals allow-forms allow-same-origin')
+      body.appendChild(iframe)
+    }
+    </script>
+  </head>
+
+  <body id="item">
+    
+    <header>
+      <div>
+        <h1>🏛️ Internal Demo</h1>
+        <p><a href="/">👈  Back to the index</a></p>
+      </div>
+    </header>
+
+  </body>
+
+</html>
